@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Video Views</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        margin: 20px;
+      }
+      .input-group {
+        margin-bottom: 20px;
+      }
+      #videoIds {
+        width: 100%;
+        height: 150px;
+      }
+      .loading {
+        font-size: 1.2em;
+        color: #00b300;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      #inputDate {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Facebook Video Views</h1>
+
+      <div class="input-group">
+        <label for="accessToken">Enter Facebook Access Token:</label>
+        <input
+          type="text"
+          id="accessToken"
+          placeholder="Access Token"
+          style="width: 100%"
+        />
+      </div>
+
+      <div id="inputDate">
+        <div class="input-group">
+          <label for="fromDate">From Date:</label>
+          <input type="date" id="fromDate" style="width: 100%" />
+        </div>
+
+        <div class="input-group">
+          <label for="toDate">To Date:</label>
+          <input type="date" id="toDate" style="width: 100%" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="videoIds"
+          >Enter Facebook Video IDs (comma-separated or one per line):</label
+        >
+        <textarea
+          id="videoIds"
+          placeholder="Enter video IDs here..."
+        ></textarea>
+      </div>
+
+      <button id="fetchViewsBtn">Fetch Video Views</button>
+
+      <div id="loading" class="loading" style="display: none">
+        Fetching data, please wait...
+      </div>
+
+      <table id="resultsTable" style="display: none">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Video ID</th>
+            <th>Views</th>
+            <th>Post Views</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+      <button id="exportBtn" style="display: none">Export to Excel</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
