@@ -15,12 +15,12 @@ async function fetchVideoViews() {
   const toDate = toDateInput.value;
 
   if (!accessToken) {
-    alert("Please enter a Facebook Access Token!");
+    alert("Please enter a Facebook Access Token Here!");
     return;
   }
 
   if (!videoIdsText) {
-    alert("Please enter at least one video ID!");
+    alert("Please enter at least one video ID here!");
     return;
   }
 
