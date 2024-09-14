@@ -39,8 +39,10 @@ async function fetchVideoViews() {
 
   for (let i = 0; i < videoIds.length; i++) {
     const videoId = videoIds[i];
-    const url = `https://graph.facebook.com/v17.0/${videoId}?fields=views,post_views&access_token=${accessToken}&since=${fromDate}&until=${toDate}`;
+    const url = url = 'https://graph.facebook.com/v17.0/${videoId}?fields=views,post_views&since=${since}&until=${until}&access_token=${accessToken}';
 
+	//`https://graph.facebook.com/v17.0/${videoId}?fields=views,post_views&access_token=${accessToken}&since=${fromDate}&until=${toDate}`;
+  
     try {
       const response = await fetch(url);
       const data = await response.json();
